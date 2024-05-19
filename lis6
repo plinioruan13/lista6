@@ -1,0 +1,151 @@
+Exercício 1:
+def multiplos(m,k, lista):
+    """
+    Filtra os múltiplos de um número m em uma lista.
+
+    : lista: lista de números
+    : m: número para verificar os múltiplos
+    :return: lista contendo os elementos não divisíveis por m
+    """
+
+    i=0
+    listad=[]
+    while i<k:
+       if lista[i]%m!=0:
+        listad.append(lista[i])
+       i+=1
+    segunda=listad
+    return segunda        
+m=int(input("Insira o número para filtrar:"))
+k=int(input("Insira o número de termos da lista:"))
+j=0
+lista=[]
+while j<k:
+  s=int(input("Insira um termo da lista: "))
+  lista.append(s)
+  j+=1
+print("Múltiplos de", m, "na lista:",multiplos(n,k,lista))
+
+Exercício 2:
+def frasevog(frase):
+    """
+    Retorna a frase com todas as suas vogais em maiúsculas.
+
+    :frase: frase de entrada
+    :return: frase com consoantes em maiúsculas
+    """
+
+  vogais = "aeiouAEIOU"
+  nova=""
+  i=0
+  while i<len(frase):
+    if frase[i] in vogais:
+      nova+=frase[i].upper()
+    else:
+      nova+=frase[i]
+    i+=1
+  return nova
+frase=input("Insira uma frase: ")
+print("Frase com vogais em maiúsculas:", frasevog(frase))
+
+Exercício 3:
+def posLetra(string, letra, ocorrencia):
+    """
+    Retorna a posição da ocorrência da letra na string.
+
+    :param string: string de entrada
+    :param letra: letra a ser procurada
+    :param ocorrencia: ocorrência desejada da letra
+    :return: posição da ocorrência da letra ou -1 se não encontrada
+    """
+    cont = 0
+    i = 0
+    while i<len(string):
+      if string[i]==letra:
+         cont +=1
+         if cont==ocorrencia:
+             return i
+      i+=1
+    return -1
+
+Exercício 4:
+def paresConsecutivos(lista):
+    """
+    Calcula o fatorial de um número.
+
+    :numero: número inteiro
+    :return: números repetidos
+    """
+    cont=0
+    i=1
+    while i<len(lista):
+      if lista[i]==lista[i-1]:
+        if lista[i]%2==0: 
+          cont+=1
+      i+=1
+    return cont
+
+lista=[int(x) for x in input("Digite a lista de números separados por espaço: ").split()]
+print("A lista possui ", paresConsecutivos(lista), "números repetidos e pares")
+
+
+Exercício 5:
+
+def somatoria(n):
+    """
+    Função somatoria retorna a soma de 1 até n
+    :n: número inteiro
+    :return: soma dos números
+    """
+
+    lista=list(range(1,n+1))
+    soma=sum(lista)
+    return soma
+n=int(input("Insira o número limite: "))
+print("A soma de 1 até ", n, " é igual a: ",somatoria(n))
+
+Exercício 6:
+def peça_perdida(lista):
+    """
+    Descobre qual número está faltando em uma lista de números de 1 a N.
+
+    :param lista: lista de números de 1 a N - 1
+    :return: número faltando
+    """
+    N = len(lista) + 1
+    soma_atual = sum(lista)
+    soma_esperada = N * (N + 1) // 2
+    return soma_esperada - soma_atual
+lista = [int(x) for x in input("Digite a lista de números separados por espaço: ").split()]
+print("Peça perdida:", peça_perdida(lista))
+
+Exercício 7:
+def inverter_lista(numeros):
+    """
+    Função para inventer uma lista de numeros
+    numeros: feita para inventer a lista
+    return: inverso da lista
+    """
+    return numeros[::-1]
+lista_original = [int(x) for x in input("Digite a lista de números separados por espaço: ").split()]
+lista_invertida = inverter_lista(lista_original)
+print("Lista invertida:", lista_invertida)
+
+Exercício 8:
+def inverter_frase(letras):
+    """
+    Função para inventer uma frase
+    letras: feita para inventer a frase
+    return: inverso da frase
+    """
+    return letras[::-1]
+frase=str(input("Escreva uma frase: "))
+separando=(frase.split())
+inverso=inverter_frase(separando)
+juntar=' '.join(inverso)
+print(juntar)
+
+
+
+
+
